@@ -1,13 +1,19 @@
 import './App.css';
+import { useState } from 'react';
 
 const App = () => {
+
+  const [count, setCount] = useState(0);
+  const [multiplier, setMultiplier] = useState(1);
+
+  const updateCount = () => setCount(count + multiplier);
 
   return (
     <div className="App">
       <div className='header'>
         <h1>Samosa Selector</h1>
-        <h2>Count:</h2>
-        <img className='samosa' src='https://www.samosa-recipe.com/wp-content/uploads/2019/01/aloo-samosa.jpg'></img>
+        <h2>Count: {count}</h2>
+        <img className='samosa' src='https://www.samosa-recipe.com/wp-content/uploads/2019/01/aloo-samosa.jpg' onClick={updateCount} />
       </div>
     </div>
   )
